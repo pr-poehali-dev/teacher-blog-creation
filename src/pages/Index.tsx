@@ -20,12 +20,14 @@ const Index = () => {
   const categories = [
     { id: 'all', name: 'Все материалы', icon: 'Library' },
     { id: 'lessons', name: 'Конспекты уроков', icon: 'BookOpen' },
-    { id: 'resources', name: 'Полезные ресурсы', icon: 'Link' },
-    { id: 'videos', name: 'Видеоматериалы', icon: 'Video' },
-    { id: 'articles', name: 'Статьи', icon: 'FileText' },
-    { id: 'music', name: 'Музыка', icon: 'Music' },
     { id: 'films', name: 'Фильмы', icon: 'Film' },
-    { id: 'presentations', name: 'Презентации', icon: 'Presentation' }
+    { id: 'music', name: 'Музыка', icon: 'Music' },
+    { id: 'books-teacher', name: 'Книги для учителя', icon: 'BookMarked' },
+    { id: 'books-student', name: 'Книги для учеников', icon: 'GraduationCap' },
+    { id: 'edu-resources', name: 'Образовательные ресурсы', icon: 'School' },
+    { id: 'videos', name: 'Видеоматериалы', icon: 'Video' },
+    { id: 'links', name: 'Полезные ссылки', icon: 'Link' },
+    { id: 'tools', name: 'Инструменты учителю', icon: 'Wrench' }
   ];
 
   const materials: Material[] = [
@@ -39,59 +41,115 @@ const Index = () => {
     },
     {
       id: 2,
+      title: '"Солярис" Тарковского',
+      category: 'films',
+      date: '12 ноября 2024',
+      description: 'Анализ философской фантастики и способов её изучения на уроках литературы',
+      icon: 'Film'
+    },
+    {
+      id: 3,
+      title: 'Романсы на стихи Цветаевой',
+      category: 'music',
+      date: '8 ноября 2024',
+      description: 'Аудиоподборка музыкальных интерпретаций поэзии Марины Цветаевой',
+      icon: 'Music'
+    },
+    {
+      id: 4,
+      title: 'Методика преподавания литературы',
+      category: 'books-teacher',
+      date: '5 ноября 2024',
+      description: 'Учебное пособие по современным методам преподавания литературы в школе',
+      icon: 'BookMarked'
+    },
+    {
+      id: 5,
+      title: '"Евгений Онегин" для старшеклассников',
+      category: 'books-student',
+      date: '2 ноября 2024',
+      description: 'Издание с комментариями и историко-литературным контекстом для учеников',
+      icon: 'GraduationCap'
+    },
+    {
+      id: 6,
+      title: 'Платформа "Российская электронная школа"',
+      category: 'edu-resources',
+      date: '30 октября 2024',
+      description: 'Интерактивные уроки по всей школьной программе русского языка и литературы',
+      icon: 'School'
+    },
+    {
+      id: 7,
       title: 'Поэзия Серебряного века',
       category: 'videos',
-      date: '10 октября 2024',
+      date: '25 октября 2024',
       description: 'Видеолекция о символизме и акмеизме с примерами произведений',
       icon: 'Video'
     },
     {
-      id: 3,
-      title: 'Литературные образы в кино',
-      category: 'films',
-      date: '5 октября 2024',
-      description: 'Подборка экранизаций русской классики для анализа на уроках',
-      icon: 'Film'
-    },
-    {
-      id: 4,
-      title: 'Синтаксис сложного предложения',
-      category: 'presentations',
-      date: '1 октября 2024',
-      description: 'Интерактивная презентация с упражнениями и схемами',
-      icon: 'Presentation'
-    },
-    {
-      id: 5,
-      title: 'Современная русская литература',
-      category: 'articles',
-      date: '28 сентября 2024',
-      description: 'Обзорная статья о тенденциях развития русской прозы XXI века',
-      icon: 'FileText'
-    },
-    {
-      id: 6,
-      title: 'Романсы на стихи русских поэтов',
-      category: 'music',
-      date: '20 сентября 2024',
-      description: 'Аудиоподборка для изучения связи поэзии и музыки',
-      icon: 'Music'
-    },
-    {
-      id: 7,
-      title: 'Онлайн-библиотеки и словари',
-      category: 'resources',
-      date: '15 сентября 2024',
-      description: 'Коллекция полезных ресурсов для учителей и учеников',
+      id: 8,
+      title: 'Национальный корпус русского языка',
+      category: 'links',
+      date: '20 октября 2024',
+      description: 'Инструмент для поиска примеров употребления слов и конструкций',
       icon: 'Link'
     },
     {
-      id: 8,
+      id: 9,
+      title: 'Конструктор интерактивных заданий',
+      category: 'tools',
+      date: '18 октября 2024',
+      description: 'Сервис для создания тестов, кроссвордов и викторин по литературе',
+      icon: 'Wrench'
+    },
+    {
+      id: 10,
       title: 'Подготовка к ЕГЭ по литературе',
       category: 'lessons',
-      date: '10 сентября 2024',
-      description: 'Методические материалы и типовые задания с разборами',
+      date: '10 октября 2024',
+      description: 'Методические материалы и типовые задания с подробными разборами',
       icon: 'BookOpen'
+    },
+    {
+      id: 11,
+      title: '"Двенадцать стульев" экранизации',
+      category: 'films',
+      date: '5 октября 2024',
+      description: 'Сравнительный анализ киноверсий романа Ильфа и Петрова',
+      icon: 'Film'
+    },
+    {
+      id: 12,
+      title: 'Грамота.ру и другие словари',
+      category: 'links',
+      date: '1 октября 2024',
+      description: 'Справочно-информационные порталы по русскому языку',
+      icon: 'Link'
+    },
+    {
+      id: 13,
+      title: 'Классическая музыка в литературных произведениях',
+      category: 'music',
+      date: '28 сентября 2024',
+      description: 'Подборка музыкальных произведений, упоминаемых в русской литературе XIX века',
+      icon: 'Music'
+    },
+    {
+      id: 14,
+      title: 'Рабочие программы по ФГОС',
+      category: 'books-teacher',
+      date: '25 сентября 2024',
+      description: 'Примеры рабочих программ по русскому языку и литературе',
+      icon: 'BookMarked'
+    },
+    {
+      id: 15,
+      title: 'Хрестоматия по древнерусской литературе',
+      category: 'books-student',
+      date: '20 сентября 2024',
+      description: 'Тексты для изучения литературы Древней Руси с комментариями',
+      icon: 'GraduationCap'
     }
   ];
 
@@ -147,7 +205,7 @@ const Index = () => {
 
         <section className="mb-12">
           <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-full">
-            <TabsList className="w-full grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 h-auto gap-2 bg-transparent p-0 mb-8">
+            <TabsList className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-10 h-auto gap-2 bg-transparent p-0 mb-8">
               {categories.map((cat) => (
                 <TabsTrigger
                   key={cat.id}
